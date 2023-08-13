@@ -4,6 +4,7 @@ const { test, expect } = require('@playwright/test');
 test.describe('User login to Demobank', () => {
     test('Test login with correct credentials', async ({ page }) => {
         await page.goto('https://demo-bank.vercel.app/');
+        await page.pause()
         await page.getByTestId('login-input').click();
         await page.getByTestId('login-input').fill('Tester01');
         await page.getByTestId('password-input').click();
